@@ -6,10 +6,9 @@ import { Weapon, EssenceStats } from '../types';
 interface WeaponCardProps {
   weapon: Weapon;
   selectedEssence: EssenceStats;
-  isOwned?: boolean;
 }
 
-export const WeaponCard: React.FC<WeaponCardProps> = ({ weapon, selectedEssence, isOwned = false }) => {
+export const WeaponCard: React.FC<WeaponCardProps> = ({ weapon, selectedEssence }) => {
   const matches = {
     primary: selectedEssence.primary === weapon.requiredEssence.primary,
     secondary: selectedEssence.secondary === weapon.requiredEssence.secondary,
@@ -63,30 +62,24 @@ export const WeaponCard: React.FC<WeaponCardProps> = ({ weapon, selectedEssence,
         </div>
 
         <div className="flex flex-wrap gap-2">
-          <StatTag label={weapon.requiredEssence.primary} matched={matches.primary} rarity={weapon.rarity} isOwned={isOwned} />
-          <StatTag label={weapon.requiredEssence.secondary} matched={matches.secondary} rarity={weapon.rarity} isOwned={isOwned} />
-          <StatTag label={weapon.requiredEssence.skill} matched={matches.skill} rarity={weapon.rarity} isOwned={isOwned} />
+          <StatTag label={weapon.requiredEssence.primary} matched={matches.primary} />
+          <StatTag label={weapon.requiredEssence.secondary} matched={matches.secondary} />
+          <StatTag label={weapon.requiredEssence.skill} matched={matches.skill} />
         </div>
       </div>
     </div>
   );
 };
 
-const StatTag = ({ label, matched, rarity, isOwned }: { label: string; matched: boolean; rarity: number; isOwned?: boolean }) => {
-  const rarityClasses = rarity === 6
-    ? 'bg-red-400/20 border-red-400/50 text-red-400 font-bold'
-    : rarity === 5
-      ? 'bg-yellow-400/20 border-yellow-400/50 text-yellow-400 font-bold'
-      : 'bg-purple-400/20 border-purple-400/50 text-purple-400 font-bold';
-
-  const activeClasses = matched
-    ? (isOwned ? 'bg-yellow-400/20 border-yellow-400/50 text-yellow-400 font-bold' : rarityClasses)
-    : 'bg-[#000]/30 border-[#333] text-gray-400 opacity-60';
-
-  return (
-    <div className={`flex items-center gap-1 text-[10px] px-2 py-1 rounded transition-all border ${activeClasses}`}>
-      {matched && <Check className="w-3 h-3" strokeWidth={3} />}
-      <span className="truncate">{label}</span>
-    </div>
-  );
-};
+const StatTag = ({ label, matched }: { label: string; matched: boolean }) => (
+  <div className={`
+    flex items-center gap-1 text-[10px] px-2 py-1 rounded transition-all border
+    ${matched 
+      ? 'bg-yellow-400/20 border-yellow-400/50 text-yellow-400 font-bold' 
+      : 'bg-[#000]/30 border-[#333] text-gray-400 opacity-60'
+    }
+  `}>
+    {matched && <Check className="w-3 h-3" strokeWidth={3} />}
+    <span className="truncate">{label}</span>
+  </div>
+);
