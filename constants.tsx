@@ -383,7 +383,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w29',
     name: 'Fortmaker',
-    img: 'https://picsum.photos/seed/fortmaker/200/200',
+    img: 'https://endfield.wiki.gg/images/Fortmaker_icon.png?3d1551=&format=original',
     rarity: 5,
     type: 'Sword',
     requiredEssence: {
@@ -395,7 +395,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w30',
     name: 'Finishing Call',
-    img: 'https://picsum.photos/seed/finishing-call/200/200',
+    img: 'https://endfield.wiki.gg/images/Finishing_Call_icon.png?229638=&format=original',
     rarity: 5,
     type: 'Great Sword',
     requiredEssence: {
@@ -407,7 +407,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w31',
     name: 'Chimeric Justice',
-    img: 'https://picsum.photos/seed/chimeric-justice/200/200',
+    img: 'https://endfield.wiki.gg/images/Chimeric_Justice_icon.png?6ac63a=&format=original',
     rarity: 5,
     type: 'Polearm',
     requiredEssence: {
@@ -419,7 +419,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w32',
     name: 'Rational Farewell',
-    img: 'https://picsum.photos/seed/rational-farewell/200/200',
+    img: 'https://endfield.wiki.gg/images/Rational_Farewell_icon.png?89cedb=&format=original',
     rarity: 5,
     type: 'Handcannon',
     requiredEssence: {
@@ -431,7 +431,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w33',
     name: 'Monaihe',
-    img: 'https://picsum.photos/seed/monaihe/200/200',
+    img: 'https://endfield.wiki.gg/images/Monaihe_icon.png?8cebe1=&format=original',
     rarity: 5,
     type: 'Arts Unit',
     requiredEssence: {
@@ -443,7 +443,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w34',
     name: 'Stanza of Memorials',
-    img: 'https://picsum.photos/seed/stanza-of-memorials/200/200',
+    img: 'https://endfield.wiki.gg/images/Stanza_of_Memorials_icon.png?e54a96=&format=original',
     rarity: 5,
     type: 'Arts Unit',
     requiredEssence: {
@@ -455,7 +455,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w35',
     name: 'Finchaser 3.0',
-    img: 'https://picsum.photos/seed/finchaser-3-0/200/200',
+    img: 'https://endfield.wiki.gg/images/Finchaser_3.0_icon.png?7e505c=&format=original',
     rarity: 5,
     type: 'Sword',
     requiredEssence: {
@@ -467,7 +467,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w36',
     name: 'Twelve Questions',
-    img: 'https://picsum.photos/seed/twelve-questions/200/200',
+    img: 'https://endfield.wiki.gg/images/Twelve_Questions_icon.png?1ebdc8=&format=original',
     rarity: 5,
     type: 'Sword',
     requiredEssence: {
@@ -479,7 +479,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w37',
     name: 'OBJ Edge of Lightness',
-    img: 'https://picsum.photos/seed/obj-edge-of-lightness/200/200',
+    img: 'https://endfield.wiki.gg/images/OBJ_Edge_of_Lightness_icon.png?8ff914=&format=original',
     rarity: 5,
     type: 'Sword',
     requiredEssence: {
@@ -491,7 +491,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w38',
     name: 'Aspirant',
-    img: 'https://picsum.photos/seed/aspirant/200/200',
+    img: 'https://endfield.wiki.gg/images/Aspirant_icon.png?9d6460=&format=original',
     rarity: 5,
     type: 'Sword',
     requiredEssence: {
@@ -503,7 +503,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w39',
     name: 'Seeker of Dark Lung',
-    img: 'https://picsum.photos/seed/seeker-of-dark-lung/200/200',
+    img: 'https://endfield.wiki.gg/images/Seeker_of_Dark_Lung_icon.png?e6ff80=&format=original',
     rarity: 5,
     type: 'Great Sword',
     requiredEssence: {
@@ -515,7 +515,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w40',
     name: 'Ancient Canal',
-    img: 'https://picsum.photos/seed/ancient-canal/200/200',
+    img: 'https://endfield.wiki.gg/images/Ancient_Canal_icon.png?7407c6=&format=original',
     rarity: 5,
     type: 'Great Sword',
     requiredEssence: {
@@ -527,7 +527,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w41',
     name: 'OBJ Heavy Burden',
-    img: 'https://picsum.photos/seed/obj-heavy-burden/200/200',
+    img: 'https://endfield.wiki.gg/images/OBJ_Heavy_Burden_icon.png?f28453=&format=original',
     rarity: 5,
     type: 'Great Sword',
     requiredEssence: {
@@ -539,7 +539,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w42',
     name: 'OBJ Razorhorn',
-    img: 'https://picsum.photos/seed/obj-razorhorn/200/200',
+    img: 'https://endfield.wiki.gg/images/OBJ_Razorhorn_icon.png?fa04e9=&format=original',
     rarity: 5,
     type: 'Polearm',
     requiredEssence: {
@@ -551,7 +551,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w43',
     name: 'Opus: The Living',
-    img: 'https://picsum.photos/seed/opus-the-living/200/200',
+    img: 'https://endfield.wiki.gg/images/Opus_The_Living_icon.png?ddbc1b=&format=original',
     rarity: 5,
     type: 'Handcannon',
     requiredEssence: {
@@ -563,7 +563,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w44',
     name: 'OBJ Velocitous',
-    img: 'https://picsum.photos/seed/obj-velocitous/200/200',
+    img: 'https://endfield.wiki.gg/images/OBJ_Velocitous_icon.png?559309=&format=original',
     rarity: 5,
     type: 'Handcannon',
     requiredEssence: {
@@ -575,7 +575,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w45',
     name: 'Freedom to Proselytize',
-    img: 'https://picsum.photos/seed/freedom-to-proselytize/200/200',
+    img: 'https://endfield.wiki.gg/images/Freedom_to_Proselytize_icon.png?db61fc=&format=original',
     rarity: 5,
     type: 'Arts Unit',
     requiredEssence: {
@@ -587,7 +587,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w46',
     name: 'OBJ Arts Identifier',
-    img: 'https://picsum.photos/seed/obj-arts-identifier/200/200',
+    img: 'https://endfield.wiki.gg/images/OBJ_Arts_Identifier_icon.png?dde51c=&format=original',
     rarity: 5,
     type: 'Arts Unit',
     requiredEssence: {
@@ -599,7 +599,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w47',
     name: 'Cohesive Traction',
-    img: 'https://picsum.photos/seed/cohesive-traction/200/200',
+    img: 'https://endfield.wiki.gg/images/Cohesive_Traction_icon.png?1cec26=&format=original',
     rarity: 5,
     type: 'Polearm',
     requiredEssence: {
@@ -613,7 +613,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w48',
     name: "Pathfinder's Beacon",
-    img: 'https://picsum.photos/seed/pathfinders-beacon/200/200',
+    img: 'https://endfield.wiki.gg/images/Pathfinder%27s_Beacon_icon.png?1615c4=&format=original',
     rarity: 4,
     type: 'Polearm',
     requiredEssence: {
@@ -625,7 +625,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w49',
     name: 'Industry 0.1',
-    img: 'https://picsum.photos/seed/industry-0-1/200/200',
+    img: 'https://endfield.wiki.gg/images/Industry_0.1_icon.png?d843dc=&format=original',
     rarity: 4,
     type: 'Great Sword',
     requiredEssence: {
@@ -637,7 +637,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w50',
     name: 'Howling Guard',
-    img: 'https://picsum.photos/seed/howling-guard/200/200',
+    img: 'https://endfield.wiki.gg/images/Howling_Guard_icon.png?2a3ac9=&format=original',
     rarity: 4,
     type: 'Handcannon',
     requiredEssence: {
@@ -649,7 +649,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w51',
     name: 'Contingent Measure',
-    img: 'https://picsum.photos/seed/contingent-measure/200/200',
+    img: 'https://endfield.wiki.gg/images/Contingent_Measure_icon.png?c92bf6=&format=original',
     rarity: 4,
     type: 'Sword',
     requiredEssence: {
@@ -661,7 +661,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w52',
     name: 'Aggeloslayer',
-    img: 'https://picsum.photos/seed/aggeloslayer/200/200',
+    img: 'https://endfield.wiki.gg/images/Aggeloslayer_icon.png?ea9444=&format=original',
     rarity: 4,
     type: 'Polearm',
     requiredEssence: {
@@ -673,7 +673,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w53',
     name: 'Long Road',
-    img: 'https://picsum.photos/seed/long-road/200/200',
+    img: 'https://endfield.wiki.gg/images/Long_Road_icon.png?8fcb32=&format=original',
     rarity: 4,
     type: 'Handcannon',
     requiredEssence: {
@@ -685,7 +685,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w54',
     name: 'Hypernova Auto',
-    img: 'https://picsum.photos/seed/hypernova-auto/200/200',
+    img: 'https://endfield.wiki.gg/images/Hypernova_Auto_icon.png?6b375e=&format=original',
     rarity: 4,
     type: 'Arts Unit',
     requiredEssence: {
@@ -697,7 +697,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w55',
     name: 'Wave Tide',
-    img: 'https://picsum.photos/seed/wave-tide/200/200',
+    img: 'https://endfield.wiki.gg/images/Wave_Tide_icon.png?c364d9=&format=original',
     rarity: 4,
     type: 'Sword',
     requiredEssence: {
@@ -709,7 +709,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w56',
     name: 'Quencher',
-    img: 'https://picsum.photos/seed/quencher/200/200',
+    img: 'https://endfield.wiki.gg/images/Quencher_icon.png?c0c61a=&format=original',
     rarity: 4,
     type: 'Great Sword',
     requiredEssence: {
@@ -721,7 +721,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w57',
     name: 'Fluorescent Roc',
-    img: 'https://picsum.photos/seed/fluorescent-roc/200/200',
+    img: 'https://endfield.wiki.gg/images/Fluorescent_Roc_icon.png?deecb1=&format=original',
     rarity: 4,
     type: 'Arts Unit',
     requiredEssence: {
