@@ -158,7 +158,7 @@ const App: React.FC = () => {
             <div className="bg-yellow-400 p-2 rounded">
               <ShieldCheck className="w-6 h-6 text-black" />
             </div>
-            <h1 className="text-xl font-black text-white uppercase tracking-tighter italic">Essence Forge</h1>
+            <h1 className="text-xl font-black text-white uppercase tracking-tighter italic">Essence Tracker</h1>
           </div>
           
           <div className="flex items-center gap-4">

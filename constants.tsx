@@ -45,7 +45,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w1',
     name: 'Sundered Prince',
-    img: 'https://picsum.photos/seed/sundered-prince/200/200',
+    img: 'https://endfield.wiki.gg/images/Sundered_Prince_icon.png?a6f1f6=&format=original',
     rarity: 6,
     type: 'Great Sword',
     requiredEssence: {
