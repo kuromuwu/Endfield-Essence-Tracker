@@ -39,7 +39,8 @@ const App: React.FC = () => {
   const [myEssences, setMyEssences] = useState<Essence[]>([]);
   const [myWeaponIds, setMyWeaponIds] = useState<string[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  
+  const [sortMode, setSortMode] = useState<'rarity' | 'alphabetical'>('rarity');
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedStats, setSelectedStats] = useState<EssenceStats>({
     primary: null,
     secondary: null,
@@ -297,94 +298,114 @@ const App: React.FC = () => {
                 </h2>
               </div>
 
+              {/* Inventory controls */}
+              <div className="flex items-center gap-2 mb-4">
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={e => setSearchQuery(e.target.value)}
+                  placeholder="Search weapons..."
+                  className="px-3 py-1.5 rounded border border-[#333] bg-black/30 text-sm text-white focus:border-yellow-400 outline-none"
+                  style={{ minWidth: 180 }}
+                />
+                <button
+                  onClick={() => setSortMode(sortMode === 'rarity' ? 'alphabetical' : 'rarity')}
+                  className="px-3 py-1.5 rounded border border-[#333] bg-black/30 text-sm font-bold text-yellow-400 hover:bg-yellow-400 hover:text-black transition-all"
+                >
+                  Sort: {sortMode === 'rarity' ? 'Rarity' : 'A-Z'}
+                </button>
+              </div>
+              {/* Inventory grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {WEAPONS.map(weapon => {
-                  const isOwned = myWeaponIds.includes(weapon.id);
-                  const matchingEssenceCount = myEssences.filter(e => 
-                    e.primary === weapon.requiredEssence.primary && 
-                    e.secondary === weapon.requiredEssence.secondary && 
-                    e.skill === weapon.requiredEssence.skill
-                  ).length;
-
-                  return (
-                    <div 
-                      key={weapon.id}
-                      onClick={() => toggleWeaponOwned(weapon.id)}
-                      className={`relative cursor-pointer group rounded-xl p-4 border transition-all ${isOwned ? 'bg-[#1a1a1a] border-yellow-400/50 shadow-xl opacity-100' : 'bg-[#111] border-[#222] opacity-40 hover:opacity-100'}`}
-                    >
-                      <div className="flex gap-4 items-center">
-                        <div className={`w-16 h-16 rounded overflow-hidden shrink-0 border-2 ${weapon.rarity === 6 ? 'border-red-500' : weapon.rarity === 5 ? 'border-yellow-500' : 'border-purple-500'}`}>
-                          <img src={weapon.img} className={`w-full h-full object-cover ${isOwned ? '' : 'grayscale group-hover:grayscale-0'}`} />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h3 className={`text-sm font-bold text-white truncate ${isOwned ? '' : 'grayscale group-hover:grayscale-0'}`}>{weapon.name}</h3>
-                          <div className="flex gap-1 mt-1">
-                            {Array.from({length: weapon.rarity}).map((_, i) => (
-                              <Star key={i} className={`w-2.5 h-2.5 fill-yellow-400 text-yellow-400 ${isOwned ? '' : 'grayscale group-hover:grayscale-0'}`} />
-                            ))}
+                {(() => {
+                  let filtered = WEAPONS.filter(w => w.name.toLowerCase().includes(searchQuery.toLowerCase()));
+                  if (sortMode === 'rarity') {
+                    filtered = filtered.sort((a, b) => b.rarity - a.rarity || a.name.localeCompare(b.name));
+                  } else {
+                    filtered = filtered.sort((a, b) => a.name.localeCompare(b.name));
+                  }
+                  return filtered.map(weapon => {
+                    const isOwned = myWeaponIds.includes(weapon.id);
+                    const matchingEssenceCount = myEssences.filter(e => 
+                      e.primary === weapon.requiredEssence.primary && 
+                      e.secondary === weapon.requiredEssence.secondary && 
+                      e.skill === weapon.requiredEssence.skill
+                    ).length;
+                    return (
+                      <div 
+                        key={weapon.id}
+                        onClick={() => toggleWeaponOwned(weapon.id)}
+                        className={`relative cursor-pointer group rounded-xl p-4 border transition-all ${isOwned ? 'bg-[#1a1a1a] border-yellow-400/50 shadow-xl opacity-100' : 'bg-[#111] border-[#222] opacity-40 hover:opacity-100'}`}
+                      >
+                        <div className="flex gap-4 items-center">
+                          <div className={`w-16 h-16 rounded overflow-hidden shrink-0 border-2 ${weapon.rarity === 6 ? 'border-red-500' : weapon.rarity === 5 ? 'border-yellow-500' : 'border-purple-500'}`}>
+                            <img src={weapon.img} className={`w-full h-full object-cover ${isOwned ? '' : 'grayscale group-hover:grayscale-0'}`} />
                           </div>
-                        </div>
-
-                        {/* Unowned status: show matching essence count */}
-                        {!isOwned && matchingEssenceCount > 0 && (
-                          <div className="shrink-0 flex flex-col items-center justify-center">
-                            <div className="relative">
-                              <Layers className="w-5 h-5 text-yellow-400" />
-                              <span className="absolute -top-1.5 -right-1.5 bg-yellow-400 text-black text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center">
-                                {matchingEssenceCount}
-                              </span>
+                          <div className="flex-1 min-w-0">
+                            <h3 className={`text-sm font-bold text-white truncate ${isOwned ? '' : 'grayscale group-hover:grayscale-0'}`}>{weapon.name}</h3>
+                            <div className="flex gap-1 mt-1">
+                              {Array.from({length: weapon.rarity}).map((_, i) => (
+                                <Star key={i} className={`w-2.5 h-2.5 fill-yellow-400 text-yellow-400 ${isOwned ? '' : 'grayscale group-hover:grayscale-0'}`} />
+                              ))}
                             </div>
-                            <span className="text-[7px] font-bold text-yellow-400 mt-1 uppercase">Matches</span>
                           </div>
-                        )}
-
+                          {!isOwned && matchingEssenceCount > 0 && (
+                            <div className="shrink-0 flex flex-col items-center justify-center">
+                              <div className="relative">
+                                <Layers className="w-5 h-5 text-yellow-400" />
+                                <span className="absolute -top-1.5 -right-1.5 bg-yellow-400 text-black text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center">
+                                  {matchingEssenceCount}
+                                </span>
+                              </div>
+                              <span className="text-[7px] font-bold text-yellow-400 mt-1 uppercase">Matches</span>
+                            </div>
+                          )}
+                          {isOwned && (
+                            <div className="absolute top-2 right-2 bg-yellow-400 p-1 rounded-full text-black">
+                              <Plus className="w-3 h-3 rotate-45" />
+                            </div>
+                          )}
+                        </div>
                         {isOwned && (
-                          <div className="absolute top-2 right-2 bg-yellow-400 p-1 rounded-full text-black">
-                            <Plus className="w-3 h-3 rotate-45" />
+                          <div className="mt-4 pt-3 border-t border-[#333] space-y-3">
+                            <div className="text-[10px] font-black text-gray-500 uppercase">Requirement</div>
+                            <div className="flex flex-wrap gap-1.5">
+                              <span className="text-[10px] bg-black/40 text-blue-400 px-2 py-0.5 rounded border border-blue-500/20">{weapon.requiredEssence.primary}</span>
+                              <span className="text-[10px] bg-black/40 text-green-400 px-2 py-0.5 rounded border border-green-500/20">{weapon.requiredEssence.secondary}</span>
+                              <span className="text-[10px] bg-black/40 text-purple-400 px-2 py-0.5 rounded border border-purple-500/20">{weapon.requiredEssence.skill}</span>
+                            </div>
+                            <div className="space-y-2">
+                               <div className="text-[10px] font-black text-gray-400 uppercase flex items-center gap-2">
+                                 Matching Essences 
+                                 <span className="bg-yellow-400/20 text-yellow-400 px-1 rounded">
+                                   {matchingEssenceCount}
+                                 </span>
+                               </div>
+                               <div className="max-h-24 overflow-y-auto custom-scrollbar space-y-1">
+                                 {matchingEssenceCount > 0 ? (
+                                   myEssences
+                                     .filter(e => 
+                                       e.primary === weapon.requiredEssence.primary && 
+                                       e.secondary === weapon.requiredEssence.secondary && 
+                                       e.skill === weapon.requiredEssence.skill
+                                     )
+                                     .map(e => (
+                                       <div key={e.id} className="text-[10px] flex justify-between items-center bg-green-500/5 p-1 rounded border border-green-500/10">
+                                         <span className="text-green-500 font-bold">Essence #{e.id.slice(0, 4)}</span>
+                                         <span className="text-gray-500 italic text-[9px]">Exact Match</span>
+                                       </div>
+                                     ))
+                                 ) : (
+                                   <div className="text-[10px] text-gray-600 italic">No exact matches in collection.</div>
+                                 )}
+                               </div>
+                            </div>
                           </div>
                         )}
                       </div>
-                      
-                      {isOwned && (
-                        <div className="mt-4 pt-3 border-t border-[#333] space-y-3">
-                          <div className="text-[10px] font-black text-gray-500 uppercase">Requirement</div>
-                          <div className="flex flex-wrap gap-1.5">
-                            <span className="text-[10px] bg-black/40 text-blue-400 px-2 py-0.5 rounded border border-blue-500/20">{weapon.requiredEssence.primary}</span>
-                            <span className="text-[10px] bg-black/40 text-green-400 px-2 py-0.5 rounded border border-green-500/20">{weapon.requiredEssence.secondary}</span>
-                            <span className="text-[10px] bg-black/40 text-purple-400 px-2 py-0.5 rounded border border-purple-500/20">{weapon.requiredEssence.skill}</span>
-                          </div>
-
-                          <div className="space-y-2">
-                             <div className="text-[10px] font-black text-gray-400 uppercase flex items-center gap-2">
-                               Matching Essences 
-                               <span className="bg-yellow-400/20 text-yellow-400 px-1 rounded">
-                                 {matchingEssenceCount}
-                               </span>
-                             </div>
-                             <div className="max-h-24 overflow-y-auto custom-scrollbar space-y-1">
-                               {matchingEssenceCount > 0 ? (
-                                 myEssences
-                                   .filter(e => 
-                                     e.primary === weapon.requiredEssence.primary && 
-                                     e.secondary === weapon.requiredEssence.secondary && 
-                                     e.skill === weapon.requiredEssence.skill
-                                   )
-                                   .map(e => (
-                                     <div key={e.id} className="text-[10px] flex justify-between items-center bg-green-500/5 p-1 rounded border border-green-500/10">
-                                       <span className="text-green-500 font-bold">Essence #{e.id.slice(0, 4)}</span>
-                                       <span className="text-gray-500 italic text-[9px]">Exact Match</span>
-                                     </div>
-                                   ))
-                               ) : (
-                                 <div className="text-[10px] text-gray-600 italic">No exact matches in collection.</div>
-                               )}
-                             </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+                    );
+                  });
+                })()}
               </div>
             </div>
 
