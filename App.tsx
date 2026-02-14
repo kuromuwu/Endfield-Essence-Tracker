@@ -281,27 +281,8 @@ const App: React.FC = () => {
             <LayoutList size={18} />
             <span className="font-bold text-sm">Weapon Plans</span>
           </button>
-          
-          <p className="text-[10px] font-black text-zinc-600 uppercase tracking-widest mt-8 mb-3 px-4">Registry Control</p>
-          <button onClick={() => setActiveTab('databank')} className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${activeTab === 'databank' ? 'bg-zinc-900 text-amber-500 border border-zinc-800 shadow-[0_0_10px_rgba(245,158,11,0.05)]' : 'text-zinc-400 hover:bg-zinc-900/50'}`}>
-            <Database size={18} />
-            <span className="font-bold text-sm">Databank Registry</span>
-          </button>
         </nav>
 
-        <div className="mt-auto space-y-4">
-          <div className="bg-zinc-900/50 border border-zinc-800 rounded-lg p-3 font-mono">
-            <div className="flex justify-between items-center mb-1">
-              <span className="text-[9px] text-zinc-500 uppercase">Status</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-            </div>
-            <p className="text-[10px] font-bold text-zinc-400 uppercase">Core Storage: <span className="text-white">Encrypted</span></p>
-          </div>
-          <button onClick={handleAIAnalysis} disabled={isAnalyzing} className="w-full flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 disabled:opacity-50 text-black font-black py-3 px-4 rounded-xl transition-all text-xs uppercase tracking-tighter">
-            <Sparkles size={16} />
-            {isAnalyzing ? 'Analyzing...' : 'Neural Link'}
-          </button>
-        </div>
       </aside>
 
       <main className="flex-1 overflow-y-auto p-4 md:p-8 bg-[#0d0d0f]">
