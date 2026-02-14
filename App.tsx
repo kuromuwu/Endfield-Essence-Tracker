@@ -247,7 +247,7 @@ const App: React.FC = () => {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {groupedMatches.perfect.map(m => (
-                      <WeaponCard key={m.weapon.id} weapon={m.weapon} selectedEssence={selectedStats} />
+                      <WeaponCard key={m.weapon.id} weapon={m.weapon} selectedEssence={selectedStats} isOwned={myWeaponIds.includes(m.weapon.id)} />
                     ))}
                   </div>
                 </div>
@@ -261,7 +261,7 @@ const App: React.FC = () => {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {groupedMatches.good.map(m => (
-                      <WeaponCard key={m.weapon.id} weapon={m.weapon} selectedEssence={selectedStats} />
+                      <WeaponCard key={m.weapon.id} weapon={m.weapon} selectedEssence={selectedStats} isOwned={myWeaponIds.includes(m.weapon.id)} />
                     ))}
                   </div>
                 </div>
@@ -275,7 +275,7 @@ const App: React.FC = () => {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {groupedMatches.partial.map(m => (
-                      <WeaponCard key={m.weapon.id} weapon={m.weapon} selectedEssence={selectedStats} />
+                      <WeaponCard key={m.weapon.id} weapon={m.weapon} selectedEssence={selectedStats} isOwned={myWeaponIds.includes(m.weapon.id)} />
                     ))}
                   </div>
                 </div>
@@ -305,15 +305,17 @@ const App: React.FC = () => {
                     e.secondary === weapon.requiredEssence.secondary && 
                     e.skill === weapon.requiredEssence.skill
                   ).length;
+                  const rarityBorderClass = weapon.rarity === 6 ? 'border-red-500' : weapon.rarity === 5 ? 'border-yellow-500' : 'border-purple-500';
+                  const rarityGlowClass = weapon.rarity === 6 ? 'shadow-[0_0_10px_rgba(239,68,68,0.15)]' : weapon.rarity === 5 ? 'shadow-[0_0_10px_rgba(234,179,8,0.15)]' : 'shadow-[0_0_10px_rgba(168,85,247,0.15)]';
 
                   return (
                     <div 
                       key={weapon.id}
                       onClick={() => toggleWeaponOwned(weapon.id)}
-                      className={`relative cursor-pointer group rounded-xl p-4 border transition-all ${isOwned ? 'bg-[#1a1a1a] border-yellow-400/50 shadow-xl opacity-100 grayscale-0' : 'bg-[#111] border-[#222] grayscale hover:grayscale-0 opacity-40 hover:opacity-100'}`}
+                      className={`relative cursor-pointer group rounded-xl p-4 border transition-all ${isOwned ? 'bg-[#1a1a1a] border-yellow-400/50 shadow-xl opacity-100 grayscale-0' : matchingEssenceCount > 0 ? 'bg-[#111] border-[#222] grayscale hover:grayscale-0 opacity-100' : 'bg-[#111] border-[#222] grayscale hover:grayscale-0 opacity-40 hover:opacity-100'}`}
                     >
                       <div className="flex gap-4 items-center">
-                        <div className={`w-16 h-16 rounded overflow-hidden shrink-0 border-2 ${weapon.rarity === 6 ? 'border-red-500' : weapon.rarity === 5 ? 'border-yellow-500' : 'border-purple-500'}`}>
+                        <div className={`w-16 h-16 rounded overflow-hidden shrink-0 border-2 ${rarityBorderClass} ${!isOwned && matchingEssenceCount > 0 ? rarityGlowClass : ''}`}>
                           <img src={weapon.img} className="w-full h-full object-cover" />
                         </div>
                         <div className="flex-1 min-w-0">
@@ -329,12 +331,12 @@ const App: React.FC = () => {
                         {!isOwned && matchingEssenceCount > 0 && (
                           <div className="shrink-0 flex flex-col items-center justify-center">
                             <div className="relative">
-                              <Layers className="w-5 h-5 text-yellow-400" />
-                              <span className="absolute -top-1.5 -right-1.5 bg-yellow-400 text-black text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center">
+                              <Layers className={`w-5 h-5 ${weapon.rarity === 6 ? 'text-red-400' : weapon.rarity === 5 ? 'text-yellow-400' : 'text-purple-400'}`} />
+                              <span className={`absolute -top-1.5 -right-1.5 ${weapon.rarity === 6 ? 'bg-red-400' : weapon.rarity === 5 ? 'bg-yellow-400' : 'bg-purple-400'} text-black text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center`}>
                                 {matchingEssenceCount}
                               </span>
                             </div>
-                            <span className="text-[7px] font-bold text-yellow-400 mt-1 uppercase">Matches</span>
+                            <span className={`text-[7px] font-bold mt-1 uppercase ${weapon.rarity === 6 ? 'text-red-400' : weapon.rarity === 5 ? 'text-yellow-400' : 'text-purple-400'}`}>Matches</span>
                           </div>
                         )}
 
