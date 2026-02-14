@@ -1,49 +1,68 @@
 
-export type Rarity = '6-Star' | '5-Star' | 'Common' | 'Uncommon' | 'Rare' | 'Epic' | 'Legendary';
-
 export type PrimaryAttribute = 
-  | 'Agility' | 'Strength' | 'Will' 
-  | 'Intellect' | 'Main Attribute';
+  | 'Agility Boost' 
+  | 'Strength Boost' 
+  | 'Will Boost' 
+  | 'Intellect Boost' 
+  | 'Main Attribute Boost';
 
 export type SecondaryStat = 
-  | 'Attack' | 'Critical Rate' | 'HP' 
-  | 'Arts Intensity' | 'Physical DMG' | 'Ultimate Gain' 
-  | 'Heat DMG' | 'Arts DMG' | 'Electric DMG' 
-  | 'Cryo DMG' | 'Treatment' | 'Nature DMG';
+  | 'Attack Boost' 
+  | 'HP Boost' 
+  | 'Physical DMG Boost' 
+  | 'Heat DMG Boost' 
+  | 'Electric DMG Boost' 
+  | 'Cryo DMG Boost' 
+  | 'Nature DMG Boost' 
+  | 'Critical Rate Boost' 
+  | 'Arts Intensity Boost' 
+  | 'Ultimate Gain Boost' 
+  | 'Arts DMG Boost' 
+  | 'Treatment Efficiency Boost';
 
 export type SkillStat = 
-  | 'Assault' | 'Suppression' | 'Pursuit' | 'Crusher' | 'Inspiring' 
-  | 'Combative' | 'Brutality' | 'Fracture' | 'Detonate' | 'Twilight' 
-  | 'Flow' | 'Efficacy' | 'Medicant' | 'Infliction';
+  | 'Assault' 
+  | 'Suppression' 
+  | 'Pursuit' 
+  | 'Crusher' 
+  | 'Inspiring' 
+  | 'Combative' 
+  | 'Brutality' 
+  | 'Infliction' 
+  | 'Medicant' 
+  | 'Fracture' 
+  | 'Detonate' 
+  | 'Twilight' 
+  | 'Flow' 
+  | 'Efficacy';
 
-export type WeaponClass = 'Sword' | 'Greatsword' | 'Handcannon' | 'Polearm' | 'Arts Unit';
+export interface EssenceStats {
+  primary: PrimaryAttribute | null;
+  secondary: SecondaryStat | null;
+  skill: SkillStat | null;
+}
 
-export interface EssenceInstance {
+export interface Essence extends EssenceStats {
   id: string;
-  primary: PrimaryAttribute;
-  secondary: SecondaryStat;
-  skill: SkillStat;
-  quantity: number;
-  timestamp: number;
+  name?: string;
+  dateAdded: number;
 }
 
 export interface Weapon {
   id: string;
   name: string;
-  rarity: '6-Star' | '5-Star';
-  type: WeaponClass;
-  imageUrl: string;
-  stats: {
-    atk: number;
-    special?: string;
-  };
-  requiredStats: {
+  img: string;
+  rarity: 4 | 5 | 6;
+  type: string;
+  requiredEssence: {
     primary: PrimaryAttribute;
     secondary: SecondaryStat;
     skill: SkillStat;
   };
 }
 
-export interface UserPreferences {
-  targetWeaponIds: string[];
+export interface UserWeapon {
+  id: string;
+  weaponId: string;
+  level?: number;
 }

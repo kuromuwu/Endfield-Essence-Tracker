@@ -1,6 +1,5 @@
-
 {
-  "name": "Endfield Armory & Essence Tracker",
-  "description": "A specialized inventory management tool for Arknights: Endfield. Track your essences, manage weapon crafting requirements, and get AI-powered advice on collection optimization.",
+  "name": "Essence Weapon Matcher",
+  "description": "A specialized tool for matching collected essences with weapons based on primary, secondary, and skill stats. Features a dual-tab system for exploring matches and managing inventory.",
   "requestFramePermissions": []
 }
