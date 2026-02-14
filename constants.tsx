@@ -57,7 +57,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w2',
     name: 'Artzy Tyrannical',
-    img: 'https://picsum.photos/seed/artzy-tyrannical/200/200',
+    img: 'https://endfield.wiki.gg/images/Artzy_Tyrannical_icon.png?f3de61=&format=original',
     rarity: 6,
     type: 'Handcannon',
     requiredEssence: {
@@ -69,7 +69,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w3',
     name: 'Delivery Guaranteed',
-    img: 'https://picsum.photos/seed/delivery-guaranteed/200/200',
+    img: 'https://endfield.wiki.gg/images/Delivery_Guaranteed_icon.png?f54227=&format=original',
     rarity: 6,
     type: 'Arts Unit',
     requiredEssence: {
@@ -81,7 +81,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w4',
     name: 'Forgeborn Scathe',
-    img: 'https://picsum.photos/seed/forgeborn-scathe/200/200',
+    img: 'https://endfield.wiki.gg/images/Forgeborn_Scathe_icon.png?41780f=&format=original',
     rarity: 6,
     type: 'Sword',
     requiredEssence: {
@@ -93,7 +93,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w5',
     name: 'Thermite Cutter',
-    img: 'https://picsum.photos/seed/thermite-cutter/200/200',
+    img: 'https://endfield.wiki.gg/images/Thermite_Cutter_icon.png?1fd4ff=&format=original',
     rarity: 6,
     type: 'Sword',
     requiredEssence: {
@@ -105,7 +105,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w6',
     name: 'Umbral Torch',
-    img: 'https://picsum.photos/seed/umbral-torch/200/200',
+    img: 'https://endfield.wiki.gg/images/Umbral_Torch_icon.png?8f6cbb=&format=original',
     rarity: 6,
     type: 'Sword',
     requiredEssence: {
@@ -117,7 +117,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w7',
     name: 'Former Finery',
-    img: 'https://picsum.photos/seed/former-finery/200/200',
+    img: 'https://endfield.wiki.gg/images/Former_Finery_icon.png?50626d=&format=original',
     rarity: 6,
     type: 'Great Sword',
     requiredEssence: {
@@ -129,7 +129,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w8',
     name: 'Thunderberge',
-    img: 'https://picsum.photos/seed/thunderberge/200/200',
+    img: 'https://endfield.wiki.gg/images/Thunderberge_icon.png?fa1b3e=&format=original',
     rarity: 6,
     type: 'Great Sword',
     requiredEssence: {
@@ -141,7 +141,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w9',
     name: 'Mountain Bearer',
-    img: 'https://picsum.photos/seed/mountain-bearer/200/200',
+    img: 'https://endfield.wiki.gg/images/Mountain_Bearer_icon.png?9fbcad=&format=original',
     rarity: 6,
     type: 'Polearm',
     requiredEssence: {
@@ -153,7 +153,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w10',
     name: 'Valiant',
-    img: 'https://picsum.photos/seed/valiant/200/200',
+    img: 'https://endfield.wiki.gg/images/Valiant_icon.png?74def8=&format=original',
     rarity: 6,
     type: 'Polearm',
     requiredEssence: {
@@ -165,7 +165,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w11',
     name: 'Wedge',
-    img: 'https://picsum.photos/seed/wedge/200/200',
+    img: 'https://endfield.wiki.gg/images/Wedge_icon.png?1f3068=&format=original',
     rarity: 6,
     type: 'Handcannon',
     requiredEssence: {
@@ -177,7 +177,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w12',
     name: 'Chivalric Virtues',
-    img: 'https://picsum.photos/seed/chivalric-virtues/200/200',
+    img: 'https://endfield.wiki.gg/images/Chivalric_Virtues_icon.png?97d981=&format=original',
     rarity: 6,
     type: 'Arts Unit',
     requiredEssence: {
@@ -189,7 +189,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w13',
     name: 'Detonation Unit',
-    img: 'https://picsum.photos/seed/detonation-unit/200/200',
+    img: 'https://endfield.wiki.gg/images/Detonation_Unit_icon.png?63e061=&format=original',
     rarity: 6,
     type: 'Arts Unit',
     requiredEssence: {
@@ -201,7 +201,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w14',
     name: 'Oblivion',
-    img: 'https://picsum.photos/seed/oblivion/200/200',
+    img: 'https://endfield.wiki.gg/images/Oblivion_icon.png?359c90=&format=original',
     rarity: 6,
     type: 'Arts Unit',
     requiredEssence: {
@@ -213,7 +213,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w15',
     name: 'Opus: Etch Figure',
-    img: 'https://picsum.photos/seed/opus-etch-figure/200/200',
+    img: 'https://endfield.wiki.gg/images/Opus_Etch_Figure_icon.png?bfa5ae=&format=original',
     rarity: 6,
     type: 'Arts Unit',
     requiredEssence: {
@@ -225,7 +225,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w16',
     name: 'Grand Vision',
-    img: 'https://picsum.photos/seed/grand-vision/200/200',
+    img: 'https://endfield.wiki.gg/images/Grand_Vision_icon.png?cacb79=&format=original',
     rarity: 6,
     type: 'Sword',
     requiredEssence: {
@@ -237,7 +237,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w17',
     name: 'Never Rest',
-    img: 'https://picsum.photos/seed/never-rest/200/200',
+    img: 'https://endfield.wiki.gg/images/Never_Rest_icon.png?867c76=&format=original',
     rarity: 6,
     type: 'Sword',
     requiredEssence: {
@@ -249,7 +249,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w18',
     name: 'Rapid Ascent',
-    img: 'https://picsum.photos/seed/rapid-ascent/200/200',
+    img: 'https://endfield.wiki.gg/images/Rapid_Ascent_icon.png?9c40b7=&format=original',
     rarity: 6,
     type: 'Sword',
     requiredEssence: {
@@ -261,7 +261,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w19',
     name: 'Eminent Repute',
-    img: 'https://picsum.photos/seed/eminent-repute/200/200',
+    img: 'https://endfield.wiki.gg/images/Eminent_Repute_icon.png?4a08f8=&format=original',
     rarity: 6,
     type: 'Sword',
     requiredEssence: {
@@ -273,7 +273,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w20',
     name: 'White Night Nova',
-    img: 'https://picsum.photos/seed/white-night-nova/200/200',
+    img: 'https://endfield.wiki.gg/images/White_Night_Nova_icon.png?c67e4d=&format=original',
     rarity: 6,
     type: 'Sword',
     requiredEssence: {
@@ -285,7 +285,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w21',
     name: 'Khravengger',
-    img: 'https://picsum.photos/seed/khravengger/200/200',
+    img: 'https://endfield.wiki.gg/images/Khravengger_icon.png?21bc4b=&format=original',
     rarity: 6,
     type: 'Great Sword',
     requiredEssence: {
@@ -297,7 +297,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w22',
     name: 'Exemplar',
-    img: 'https://picsum.photos/seed/exemplar/200/200',
+    img: 'https://endfield.wiki.gg/images/Exemplar_icon.png?df5afb=&format=original',
     rarity: 6,
     type: 'Great Sword',
     requiredEssence: {
@@ -309,7 +309,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w23',
     name: 'JET',
-    img: 'https://picsum.photos/seed/jet/200/200',
+    img: 'https://endfield.wiki.gg/images/JET_icon.png?64b087=&format=original',
     rarity: 6,
     type: 'Polearm',
     requiredEssence: {
@@ -321,7 +321,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w24',
     name: 'Navigator',
-    img: 'https://picsum.photos/seed/navigator/200/200',
+    img: 'https://endfield.wiki.gg/images/Navigator_icon.png?f41b8a=&format=original',
     rarity: 6,
     type: 'Handcannon',
     requiredEssence: {
@@ -333,7 +333,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w25',
     name: 'Clannibal',
-    img: 'https://picsum.photos/seed/clannibal/200/200',
+    img: 'https://endfield.wiki.gg/images/Clannibal_icon.png?cc0dcd=&format=original',
     rarity: 6,
     type: 'Handcannon',
     requiredEssence: {
@@ -345,7 +345,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w26',
     name: 'Dreams of the Starry Beach',
-    img: 'https://picsum.photos/seed/dreams-of-the-starry-beach/200/200',
+    img: 'https://endfield.wiki.gg/images/Dreams_of_the_Starry_Beach_icon.png?875f3e=&format=original',
     rarity: 6,
     type: 'Arts Unit',
     requiredEssence: {
@@ -359,7 +359,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w27',
     name: 'Sundering Steel',
-    img: 'https://picsum.photos/seed/sundering-steel/200/200',
+    img: 'https://endfield.wiki.gg/images/Sundering_Steel_icon.png?e39fb8=&format=original',
     rarity: 5,
     type: 'Sword',
     requiredEssence: {
@@ -371,7 +371,7 @@ export const WEAPONS: Weapon[] = [
   {
     id: 'w28',
     name: 'Wild Wanderer',
-    img: 'https://picsum.photos/seed/wild-wanderer/200/200',
+    img: 'https://endfield.wiki.gg/images/Wild_Wanderer_icon.png?baf527=&format=original',
     rarity: 5,
     type: 'Arts Unit',
     requiredEssence: {
